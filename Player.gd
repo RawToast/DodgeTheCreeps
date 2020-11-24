@@ -10,6 +10,11 @@ signal hit
 export (int) var speed  # How fast the player will move (pixels/sec).
 var screen_size  # Size of the game window.
 
+func start(pos):
+  position = pos
+  show()
+  $CollisionShape2D.disabled = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
   screen_size = get_viewport_rect().size
@@ -46,3 +51,8 @@ func _process(delta):
     $AnimatedSprite.animation = "up"
     $AnimatedSprite.flip_v = velocity.y > 0
       
+func _on_Player_body_entered(body):
+  hide() # Player disappears after being hit.
+  emit_signal("hit")
+  # Disables future collisions
+  $CollisionShape2D.disabled = true
