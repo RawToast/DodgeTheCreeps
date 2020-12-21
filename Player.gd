@@ -19,7 +19,7 @@ func start(pos):
 func _ready():
   screen_size = get_viewport_rect().size
   # hide the player
-  hide()
+  # hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -51,7 +51,7 @@ func _process(delta):
     $AnimatedSprite.animation = "up"
     $AnimatedSprite.flip_v = velocity.y > 0
       
-func _on_Player_body_entered(body):
+func _on_Player_body_entered(_body):
   hide() # Player disappears after being hit.
   emit_signal("hit")
   # Disables future collisions

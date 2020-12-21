@@ -26,6 +26,7 @@ animations = [ {
 } ]
 
 [node name="RigidBody2D" type="RigidBody2D"]
+position = Vector2( 108, 104 )
 collision_mask = 0
 gravity_scale = 0.0
 
