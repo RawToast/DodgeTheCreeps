@@ -19,7 +19,7 @@ func start(pos):
 func _ready():
   screen_size = get_viewport_rect().size
   # hide the player
-  # hide()
+  hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
